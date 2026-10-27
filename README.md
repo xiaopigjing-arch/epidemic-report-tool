@@ -4,13 +4,13 @@
 
 ## 发布状态
 
-v1.0正在进行Windows编译与发布验收，尚未提供正式下载包。完成后将在本仓库的 [Releases](https://github.com/xiaopigjing-arch/epidemic-report-tool/releases) 页面提供。
+v1.0已发布。请到 [最新版下载页](https://github.com/xiaopigjing-arch/epidemic-report-tool/releases/latest) 下载 **EpiReport_v1.0.zip**（约26.8 MB），完整解压后双击“疫情监测报告助手_v1.0.exe”。保留整个文件夹，无需自行安装Python。
 
 软件内的最新版下载入口指向：
 
 [下载最新发布版本](https://github.com/xiaopigjing-arch/epidemic-report-tool/releases/latest)
 
-首次正式发布前，latest链接可能无法打开。请勿将GitHub的Source code压缩包当作可运行软件。
+GitHub附件使用英文文件名，软件名称仍为“疫情监测报告助手 v1.0”。请勿将GitHub的Source code压缩包当作可运行软件。
 
 ## 主要功能
 
@@ -22,7 +22,9 @@ v1.0正在进行Windows编译与发布验收，尚未提供正式下载包。完
 
 ## 使用说明
 
-计划支持Windows10/11 Intel/AMD 64位。正式包的安装启动方法以随包《使用说明.txt》为准。
+面向Windows10/11 Intel/AMD 64位，不适用于32位、ARM64或macOS。安装启动方法以随包《使用说明.txt》为准。
+
+已完成Windows Server2022云端源码六类合成报告及编译EXE启动检查。Windows10/11干净机脱网启动、高DPI、Word/WPS分页及编译EXE完整报告流程仍待实机验收，详情见Release说明。
 
 报表处理和报告生成均在本机完成，不自动检查更新。使用者主动点击下载入口时，才调用浏览器访问GitHub。报告使用前须由专业人员核对数据、图表和建议。
 
