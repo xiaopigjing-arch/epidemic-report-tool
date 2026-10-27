@@ -26,7 +26,7 @@ jobs:
           with open(os.environ['GITHUB_EVENT_PATH']) as f: url=json.load(f)['inputs']['candidate_url']
           from urllib.parse import urlparse
           u=urlparse(url)
-          assert u.scheme=='https' and u.hostname=='sdmntprjapaneast.oaiusercontent.com'
+          assert u.scheme=='https' and u.hostname=='sdmntprwestus2.oaiusercontent.com'
           assert os.environ['GITHUB_REPOSITORY']=='xiaopigjing-arch/epidemic-report-tool'
           print('::add-mask::'+url)
           with open(os.environ['GITHUB_ENV'],'a') as f: f.write('CANDIDATE_URL='+url+'\n')
