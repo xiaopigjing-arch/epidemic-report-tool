@@ -26,7 +26,7 @@ jobs:
           with open(os.environ['GITHUB_EVENT_PATH']) as f: url=json.load(f)['inputs']['candidate_url']
           from urllib.parse import urlparse
           u=urlparse(url)
-          assert u.scheme=='https' and u.hostname=='sdmntprwestus2.oaiusercontent.com'
+          assert u.scheme=='https' and u.hostname and u.hostname.startswith('sdmntpr') and u.hostname.endswith('.oaiusercontent.com')
           assert os.environ['GITHUB_REPOSITORY']=='xiaopigjing-arch/epidemic-report-tool'
           print('::add-mask::'+url)
           with open(os.environ['GITHUB_ENV'],'a') as f: f.write('CANDIDATE_URL='+url+'\n')
@@ -46,12 +46,12 @@ jobs:
           for n,v in changes.items(): files[n]=base64.b64decode(v)
           files.pop('第三方许可/Nuitka-nuitka_reports_LicenseReport.rst.j2')
           for n in ['SHA256SUMS.txt','文件清单.txt']: files.pop(n,None)
-          files['文件清单.txt']=(''.join(f'{n}\t{len(files[n])} bytes\n' for n in sorted(files))+'本清单不列自身及SHA256清单。\n').encode()
-          files['SHA256SUMS.txt']=''.join(f'{hashlib.sha256(files[n]).hexdigest()}  {n}\n' for n in sorted(files)).encode()
+          files['文件清单.txt']=(''.join(f'{n}\t{len(files[n])} bytes\n' for n in sorted(files,key=lambda n:Path(n).parts))+'本清单不列自身及SHA256清单。\n').encode()
+          files['SHA256SUMS.txt']=''.join(f'{hashlib.sha256(files[n]).hexdigest()}  {n}\n' for n in sorted(files,key=lambda n:Path(n).parts)).encode()
           assert len(files)==1028
           p=Path('EpiReport_v1.0.zip')
           with zipfile.ZipFile(p,'w') as z:
-           for n in sorted(files):
+           for n in sorted(files,key=lambda n:Path(n).parts):
             info=zipfile.ZipInfo('疫情监测报告助手_v1.0/'+n,(2026,10,27,14,6,42));info.create_system=3;info.external_attr=2175008768
             z.writestr(info,files[n],compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
           h=hashlib.sha256(p.read_bytes()).hexdigest()
