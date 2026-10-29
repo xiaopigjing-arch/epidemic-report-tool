@@ -6,6 +6,8 @@
 
 v1.0已发布。请到 [最新版下载页](https://github.com/xiaopigjing-arch/epidemic-report-tool/releases/latest) 下载 **EpiReport_v1.0.zip**（约26.8 MB），完整解压后双击“疫情监测报告助手_v1.0.exe”。保留整个文件夹，无需自行安装Python。
 
+Mac Apple芯片版也已提供：下载 **EpiReport_Mac_arm64_v1.0.zip**（约26.5 MB），完整解压后打开“疫情监测报告助手 v1.0.app”。仅支持M系列芯片，不提供Intel版，无需另装Python。
+
 软件内的最新版下载入口指向：
 
 [下载最新发布版本](https://github.com/xiaopigjing-arch/epidemic-report-tool/releases/latest)
@@ -22,9 +24,11 @@ GitHub附件使用英文文件名，软件名称仍为“疫情监测报告助�
 
 ## 使用说明
 
-面向Windows10/11 Intel/AMD 64位，不适用于32位、ARM64或macOS。安装启动方法以随包《使用说明.txt》为准。
+Windows包面向Windows10/11 Intel/AMD 64位，不适用于32位或Windows ARM64；Mac包仅面向Apple芯片。安装启动方法以各平台包内《使用说明.txt》为准。
 
 已完成Windows Server2022云端源码六类合成报告及编译EXE启动检查。Windows10/11干净机脱网启动、高DPI、Word/WPS分页及编译EXE完整报告流程仍待实机验收，详情见Release说明。
+
+Mac版已完成源码六类合成报告检查；最终ZIP实际解压后的编译应用通过启动、九份合成报表读取、周报及独立核对文件导出。干净Mac首次脱网运行、其他macOS版本和Word/WPS分页仍待验收。Mac包使用ad-hoc签名，未购买Developer ID或经Apple公证；首次启动请按系统正常提示确认来源，保留系统安全保护。
 
 报表处理和报告生成均在本机完成，不自动检查更新。使用者主动点击下载入口时，才调用浏览器访问GitHub。报告使用前须由专业人员核对数据、图表和建议。
 
