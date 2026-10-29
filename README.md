@@ -4,7 +4,7 @@
 
 ## 发布状态
 
-v1.0已发布。请到 [最新版下载页](https://github.com/xiaopigjing-arch/epidemic-report-tool/releases/latest) 下载 **EpiReport_v1.0.zip**（约26.8 MB），完整解压后双击“疫情监测报告助手_v1.0.exe”。保留整个文件夹，无需自行安装Python。
+v1.0已发布。请到 [最新版下载页](https://github.com/xiaopigjing-arch/epidemic-report-tool/releases/latest) 下载 **EpiReport_win_v1.0.zip**（约26.8 MB），完整解压后双击“疫情监测报告助手_v1.0.exe”。保留整个文件夹，无需自行安装Python。
 
 Mac Apple芯片版也已提供：下载 **EpiReport_Mac_arm64_v1.0.zip**（约26.5 MB），完整解压后打开“疫情监测报告助手 v1.0.app”。仅支持M系列芯片，不提供Intel版，无需另装Python。
 
